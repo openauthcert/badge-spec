@@ -1,4 +1,4 @@
-[![Validate Badge Specs](https://github.com/openauthcert/badge-spec/actions/workflows/validate-badge-specs.yml/badge.svg?branch=main)](https://github.com/openauthcert/badge-spec/actions/workflows/validate-badge-specs.yml)
+[![Validate Badge Specs](https://github.com/openauthcert/badge-spec/actions/workflows/validate-badge-specs.yml/badge.svg)](https://github.com/openauthcert/badge-spec/actions/workflows/validate-badge-specs.yml)
 ![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)
 
 # 🏷️ OpenAuthCert Badge Specifications

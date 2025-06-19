@@ -2,18 +2,12 @@ name: Validate Badge Specs
 
 on:
   push:
-    paths:
-      - "specs/**/*.json"
-      - "schema/badge-schema.json"
   pull_request:
-    paths:
-      - "specs/**/*.json"
-      - "schema/badge-schema.json"
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-    name: JSON Schema Validation
+    name: Validate badge specs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -23,20 +17,14 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Install check-jsonschema
         run: |
           python -m pip install --upgrade pip
-          pip install jsonschema
+          pip install check-jsonschema
 
       - name: Validate all badge specs
         run: |
-          shopt -s nullglob
-          files=(specs/*.json)
-          if [ ${#files[@]} -eq 0 ]; then
-            echo "No spec files to validate. Skipping."
-            exit 0
-          fi
-          for file in "${files[@]}"; do
+          find specs -name '*.json' -print0 | while IFS= read -r -d '' file; do
             echo "Validating $file"
-            jsonschema -i "$file" schema/badge-schema.json
+            check-jsonschema "$file" --schemafile schema/badge-schema.json
           done

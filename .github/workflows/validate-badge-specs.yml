@@ -30,7 +30,13 @@ jobs:
 
       - name: Validate all badge specs
         run: |
-          for file in specs/*.json; do
+          shopt -s nullglob
+          files=(specs/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No spec files to validate. Skipping."
+            exit 0
+          fi
+          for file in "${files[@]}"; do
             echo "Validating $file"
             jsonschema -i "$file" schema/badge-schema.json
           done

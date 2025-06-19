@@ -28,7 +28,7 @@ To define machine-readable criteria, formats, and verification rules for public 
 - Has publicly documented identity integration
 - Can be verified via code or documentation without vendor NDA
 
-See [`specs/free-sso-idp-v0.1.json`](specs/free-sso-idp-v0.1.json) for full format.
+See [`schema/free-sso-idp-v0.1.json`](schema/free-sso-idp-v0.1.json) for full format.
 
 ## 🛠️ Tools
 Verification scripts and parsers will live in the [`tools/`](../tools/) repo (TBD).
@@ -37,7 +37,7 @@ Verification scripts and parsers will live in the [`tools/`](../tools/) repo (TB
 Content in this repository is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## 🤝 Contributing
-Want to suggest a new badge? Open an issue or submit a PR with a `specs/<badge-name>-v<version>.json` and proposed schema updates if needed.
+Want to suggest a new badge? Open an issue or submit a PR with a `schema/<badge-name>-v<version>.json` and proposed schema updates if needed.
 
 ---
 

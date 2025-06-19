@@ -1,3 +1,5 @@
+![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)
+
 # 🏷️ OpenAuthCert Badge Specifications
 
 This repository contains the official, versioned **badge specifications** issued by the Open Authentication Certification Initiative (**OpenAuthCert**).

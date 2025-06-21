@@ -5,6 +5,8 @@
 
 This repository contains the official, versioned **badge specifications** issued by the Open Authentication Certification Initiative (**OpenAuthCert**).
 
+The active specification lives under `specs/v1.0.0/`.
+
 ## 📜 Purpose
 To define machine-readable criteria, formats, and verification rules for public badges awarded to projects, vendors, and tools that meet ethical identity integration standards.
 
@@ -12,13 +14,29 @@ To define machine-readable criteria, formats, and verification rules for public 
 ```
 .
 ├── specs/
-│   ├── free-ssso-idp-v0.1.json        # First released badge
-│   └── ...                             # Future specs and versions
-├── schema/
-│   └── badge-schema.json              # Reusable JSON Schema definition
+│   └── v1.0.0/
+│       ├── badge-schema.json          # Reusable JSON Schema definition
+│       └── free-sso-idp-v0.1.json     # First released badge
 ├── examples/
 │   └── sample-badge.json              # Sample badge issued to a test project
 └── README.md
+```
+
+### Badge File Structure
+
+Every badge specification is a JSON document with these top level keys:
+
+```json
+{
+  "badge": { /* metadata about the badge itself */ },
+  "requirements": { /* mandatory criteria */ },
+  "optional_features": [ /* optional extras */ ],
+  "verification": { /* how the badge is verified */ },
+  "status": "active",
+  "issued_since": "YYYY-MM-DD",
+  "compatible_projects": [],
+  "schema_version": "1.0"
+}
 ```
 
 ## ✅ Current Specification
@@ -29,7 +47,7 @@ To define machine-readable criteria, formats, and verification rules for public 
 - Has publicly documented identity integration
 - Can be verified via code or documentation without vendor NDA
 
-See [`schema/free-sso-idp-v0.1.json`](schema/free-sso-idp-v0.1.json) for full format.
+See [`specs/v1.0.0/free-sso-idp-v0.1.json`](specs/v1.0.0/free-sso-idp-v0.1.json) for the full JSON definition.
 
 ## 🛠️ Tools
 Verification scripts and parsers will live in the [`tools/`](../tools/) repo (TBD).
@@ -38,7 +56,8 @@ Verification scripts and parsers will live in the [`tools/`](../tools/) repo (TB
 Content in this repository is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## 🤝 Contributing
-Want to suggest a new badge? Open an issue or submit a PR with a `schema/<badge-name>-v<version>.json` and proposed schema updates if needed.
+To propose changes or a new badge, open an issue or submit a PR.
+New badge definitions should be added under `specs/<version>/` alongside `badge-schema.json`.
 
 ---
 

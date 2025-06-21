@@ -24,7 +24,8 @@ jobs:
 
       - name: Validate all badge specs
         run: |
-          find specs -name '*.json' -print0 | while IFS= read -r -d '' file; do
-            echo "Validating $file"
-            check-jsonschema "$file" --schemafile specs/v1.0.0/badge-schema.json
-          done
+          find specs -name '*.json' ! -name 'badge-schema.json' -print0 \
+            | while IFS= read -r -d '' file; do
+              echo "Validating $file"
+              check-jsonschema "$file" --schemafile specs/v1.0.0/badge-schema.json
+            done

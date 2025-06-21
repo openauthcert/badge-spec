@@ -1,0 +1,13 @@
+{
+  "badge": "free-sso-idp",
+  "version": "0.1",
+  "certified_by": "OpenAuthCert Foundation",
+  "project": "https://github.com/example/open-idp-app",
+  "project_name": "ACME OpenIDP App",
+  "protocols": ["OIDC", "SAML", "LDAP"],
+  "self_hostable": true,
+  "no_paywall": true,
+  "docs_url": "https://example.org/docs/sso",
+  "verified_at": "2025-06-18",
+  "verification_note": "Project offers built-in OIDC, SAML & LDAP support in free tier; verified via public documentation and test instance."
+}

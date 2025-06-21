@@ -3,7 +3,17 @@
   "$id": "https://openauthcert.org/schema/badge-schema.json",
   "title": "OpenAuthCert Badge Specification Schema",
   "type": "object",
-  "required": ["badge", "requirements", "verification", "status", "issued_since", "schema_version"],
+  "required": [
+    "badge",
+    "requirements",
+    "verification",
+    "auth_protocols",
+    "docs_url",
+    "version",
+    "status",
+    "issued_since",
+    "schema_version"
+  ],
   "properties": {
     "badge": {
       "type": "object",
@@ -47,7 +57,24 @@
         "requires_narrative_explanation": { "type": "boolean" }
       }
     },
-    "status": { "type": "string" },
+    "auth_protocols": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["OIDC", "SAML", "LDAP"]
+      },
+      "minItems": 1
+    },
+    "docs_url": { "type": "string", "format": "uri" },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["certified", "revoked", "expired"]
+    },
+    "expires_on": { "type": "string", "format": "date" },
     "issued_since": { "type": "string", "format": "date" },
     "compatible_projects": {
       "type": "array",

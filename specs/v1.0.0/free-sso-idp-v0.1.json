@@ -30,7 +30,10 @@
     "automatable": false,
     "requires_narrative_explanation": true
   },
-  "status": "active",
+  "auth_protocols": ["OIDC", "SAML", "LDAP"],
+  "docs_url": "https://example.com/docs/auth",
+  "version": "0.1.0",
+  "status": "certified",
   "issued_since": "2025-06-18",
   "compatible_projects": [],
   "schema_version": "1.0"

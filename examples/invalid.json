@@ -4,6 +4,7 @@
   "project": "https://github.com/hooli/social",
   "project_name": "Broken Entry",
   "protocols": "OIDC",
+  "auth_protocols": ["SSO"],
   "self_hostable": "yes",
   "no_paywall": true
 }

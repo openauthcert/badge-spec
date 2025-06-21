@@ -32,12 +32,24 @@ Every badge specification is a JSON document with these top level keys:
   "requirements": { /* mandatory criteria */ },
   "optional_features": [ /* optional extras */ ],
   "verification": { /* how the badge is verified */ },
-  "status": "active",
+  "version": "1.0.0",
+  "auth_protocols": ["OIDC", "SAML", "LDAP"],
+  "docs_url": "https://example.com/docs/auth",
+  "status": "certified",
   "issued_since": "YYYY-MM-DD",
+  "expires_on": "YYYY-MM-DD", /* optional */
   "compatible_projects": [],
   "schema_version": "1.0"
 }
 ```
+
+Key fields explained:
+
+- `version` — semantic version of the badge entry. Certification applies only to this major version.
+- `auth_protocols` — one or more of `OIDC`, `SAML`, or `LDAP`.
+- `docs_url` — URI pointing to documentation of the implementation.
+- `status` — either `certified`, `revoked`, or `expired`.
+- `expires_on` — optional expiration date of the certification.
 
 ## ✅ Current Specification
 ### `Free SSO/IdP Support Badge v0.1`

@@ -5,9 +5,10 @@
   "project": "https://github.com/hooli/social",
   "project_name": "Hooli Social",
   "protocols": ["OIDC", "SAML"],
+  "auth_protocols": ["OIDC", "LDAP"],
   "self_hostable": true,
   "no_paywall": true,
-  "docs_url": "https://hooli.example.com/docs/sso",
+  "docs_url": "https://example.com/docs/auth",
   "verified_at": "2025-07-01",
   "verification_note": "Verified via open documentation and sample instance."
 }

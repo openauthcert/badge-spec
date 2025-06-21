@@ -40,3 +40,10 @@ print('Badge is valid!')
 
 Any validation errors will raise an exception detailing the problem.
 
+## Schema Notes
+
+Required fields include `version`, `auth_protocols`, `docs_url`, and `status`.
+`auth_protocols` must list one or more of `OIDC`, `SAML`, or `LDAP`.
+`status` accepts `certified`, `revoked`, or `expired` and certification only applies to the stated major `version`.
+`expires_on` may optionally specify when a badge is no longer valid.
+
